@@ -17,6 +17,16 @@ class RegisterPhotoFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val customDialog = CustomDialog(requireContext())
+        customDialog.addButton(R.string.photo, R.string.gallery){
+            when(it.id){
+                R.string.photo ->{
+
+                }
+                R.string.gallery ->{
+
+                }
+            }
+        }
         customDialog.show()
     }
 }
