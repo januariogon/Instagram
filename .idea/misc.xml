@@ -10,7 +10,14 @@
         <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/drawable/ic_insta_grid.xml" value="0.1485" />
         <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/activity_registe.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/button_loading.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/dialog_custom.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/fragment_register_email.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/fragment_register_name_password.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/fragment_register_photo.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/Downloads/Instagram/app/src/main/res/layout/fragment_register_welcome.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
