@@ -10,6 +10,7 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.Toast
 import co.tiagoaguiar.course.instagram.R
+import co.tiagoaguiar.course.instagram.common.base.DependencyInjector
 import co.tiagoaguiar.course.instagram.common.util.TxtWatcher
 import co.tiagoaguiar.course.instagram.databinding.ActivityLoginBinding
 import co.tiagoaguiar.course.instagram.login.Login
@@ -17,6 +18,7 @@ import co.tiagoaguiar.course.instagram.login.data.FakeDataSource
 import co.tiagoaguiar.course.instagram.login.data.LoginRepository
 import co.tiagoaguiar.course.instagram.login.presentation.LoginPresenter
 import co.tiagoaguiar.course.instagram.main.view.MainActivity
+import co.tiagoaguiar.course.instagram.register.view.RegisterActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -33,8 +35,7 @@ class LoginActivity : AppCompatActivity(), Login.View {
 
         setContentView(binding.root)
 
-        val repository = LoginRepository(FakeDataSource())
-        presenter = LoginPresenter(this, repository)
+        presenter = LoginPresenter(this, DependencyInjector.loginRepository())
 
         with(binding) {
             loginEditEmail.addTextChangedListener(watcher)
@@ -47,6 +48,10 @@ class LoginActivity : AppCompatActivity(), Login.View {
             })
             loginBtnEnter.setOnClickListener {
                 presenter.login(loginEditEmail.text.toString(), loginEditPassword.text.toString())
+            }
+
+            loginTxtRegister.setOnClickListener {
+                goToRegisterScreen()
             }
         }
     }
@@ -61,19 +66,20 @@ class LoginActivity : AppCompatActivity(), Login.View {
                 && binding.loginEditPassword.text.toString().isNotEmpty()
     }
 
+    private fun goToRegisterScreen(){
+        startActivity(Intent(this, RegisterActivity::class.java))
+    }
+
     override fun showProgress(enabled: Boolean) {
         binding.loginBtnEnter.showProgress(true)
-
     }
 
     override fun displayEmailFailure(emailError: Int?) {
         binding.loginEditEmailInput.error = emailError?.let { getString(it) }
-
     }
 
     override fun displayPasswordFailure(passwordError: Int?) {
         binding.loginEditPasswordInput.error = passwordError?.let { getString(it) }
-
     }
 
     override fun onUserAuthenticated() {
