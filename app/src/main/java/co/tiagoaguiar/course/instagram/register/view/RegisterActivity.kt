@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import co.tiagoaguiar.course.instagram.R
 import co.tiagoaguiar.course.instagram.databinding.ActivityRegisterBinding
+import co.tiagoaguiar.course.instagram.register.view.RegisterNamePasswordFragment.Companion.KEY_EMAIL
 
 class RegisterActivity : AppCompatActivity(), FragmentAttachListener {
 
@@ -23,7 +24,11 @@ class RegisterActivity : AppCompatActivity(), FragmentAttachListener {
     }
 
     override fun goToNameAndPasswordScreen(email: String) {
+        val args = Bundle()
+        args.putString(KEY_EMAIL, email)
+
         val fragment = RegisterNamePasswordFragment()
+        fragment.arguments = args
 
         replaceFragment(fragment)
     }
